@@ -1,0 +1,22 @@
+.button_edit {
+  width: 24px;
+  height: 24px;
+  margin-left: 17px;
+  margin-bottom: 5px;
+  background: none;
+  border: none;
+  background-image: url(../../../images/edit_button.svg);
+  background-repeat: no-repeat;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+@media screen and (max-width: 582px) {
+  .button_edit {
+    margin-left: 10px;
+    width: 18px;
+    height: 18px;
+    background-size: cover;
+  }
+}
