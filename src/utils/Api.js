@@ -24,6 +24,14 @@ class Api {
     return this._sendRequest('GET', '/users/me');
   }
 
+  changeAvatar(avatar) {
+    return this._sendRequest('PATCH', '/users/me/avatar', { avatar });
+  }
+
+  changeLikeCardStatus(cardId, isLiked) {
+    return this._sendRequest(`${isLiked ? 'PUT' : 'DELETE'}`, `/cards/likes/${cardId}`)
+  }
+
   setUserInfo(name, about) {
     return this._sendRequest('PATCH', '/users/me', { name, about });
   }
@@ -38,14 +46,6 @@ class Api {
 
   deleteCard(cardId) {
     return this._sendRequest('DELETE', `/cards/${cardId}`);
-  }
-
-  likeCard(cardId) {
-    return this._sendRequest('PUT', `/cards/likes/${cardId}`);
-  }
-
-  unlikeCard(cardId) {
-    return this._sendRequest('DELETE', `/cards/likes/${cardId}`);
   }
 }
 
